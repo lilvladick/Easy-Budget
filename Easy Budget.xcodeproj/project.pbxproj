@@ -14,6 +14,7 @@
 		5E9218472C5634E900143EED /* Easy_BudgetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9218462C5634E900143EED /* Easy_BudgetApp.swift */; };
 		5E92184D2C5634EC00143EED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E92184C2C5634EC00143EED /* Assets.xcassets */; };
 		5E9218502C5634EC00143EED /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E92184F2C5634EC00143EED /* Preview Assets.xcassets */; };
+		5EE5B90D2C56D42200485E46 /* FirstLaunchSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE5B90C2C56D42200485E46 /* FirstLaunchSettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		5E9218462C5634E900143EED /* Easy_BudgetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Easy_BudgetApp.swift; sourceTree = "<group>"; };
 		5E92184C2C5634EC00143EED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5E92184F2C5634EC00143EED /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5EE5B90C2C56D42200485E46 /* FirstLaunchSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLaunchSettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				5E62FF212C564074003FEBAE /* HomeScreenView.swift */,
+				5EE5B90C2C56D42200485E46 /* FirstLaunchSettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -171,6 +174,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E62FF1E2C563747003FEBAE /* CategoryModel.swift in Sources */,
+				5EE5B90D2C56D42200485E46 /* FirstLaunchSettingsView.swift in Sources */,
 				5E62FF202C5637DD003FEBAE /* OperationModel.swift in Sources */,
 				5E62FF222C564074003FEBAE /* HomeScreenView.swift in Sources */,
 				5E62FF1C2C5635FC003FEBAE /* AccountModel.swift in Sources */,

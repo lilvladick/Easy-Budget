@@ -1,12 +1,8 @@
-//
-//  Easy_BudgetApp.swift
-//  Easy Budget
-//
-//  Created by Владислав Кириллов on 28.07.2024.
-//
-
 import SwiftUI
 import SwiftData
+
+let defaults = UserDefaults.standard
+let isFirstLaunch = "isFirstLaunch"
 
 @main
 struct Easy_BudgetApp: App {
@@ -14,16 +10,24 @@ struct Easy_BudgetApp: App {
     
     init() {
         do {
-            container = try ModelContainer(for: Account.self, Operation.self, Category.self )
+            container = try ModelContainer(for: Account.self, Operation.self, Category.self)
         } catch {
-            fatalError("Initialize error: \(error)")
+            fatalError("Initialize error: $$error)")
         }
     }
 
     var body: some Scene {
         WindowGroup {
-            HomeScreenView()
+            if defaults.bool(forKey: isFirstLaunch) == false {
+                FirstLaunchSettingsView()
+                    .modelContainer(container)
+                    .onAppear {
+                        defaults.set(true, forKey: isFirstLaunch)
+                    }
+            } else {
+                HomeScreenView()
+                    .modelContainer(container)
+            }
         }
-        .modelContainer(container)
     }
 }
