@@ -10,6 +10,7 @@
 		5E62FF1C2C5635FC003FEBAE /* AccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E62FF1B2C5635FB003FEBAE /* AccountModel.swift */; };
 		5E62FF1E2C563747003FEBAE /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E62FF1D2C563747003FEBAE /* CategoryModel.swift */; };
 		5E62FF202C5637DD003FEBAE /* OperationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E62FF1F2C5637DD003FEBAE /* OperationModel.swift */; };
+		5E62FF222C564074003FEBAE /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E62FF212C564074003FEBAE /* HomeScreenView.swift */; };
 		5E9218472C5634E900143EED /* Easy_BudgetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9218462C5634E900143EED /* Easy_BudgetApp.swift */; };
 		5E92184D2C5634EC00143EED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E92184C2C5634EC00143EED /* Assets.xcassets */; };
 		5E9218502C5634EC00143EED /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E92184F2C5634EC00143EED /* Preview Assets.xcassets */; };
@@ -19,6 +20,7 @@
 		5E62FF1B2C5635FB003FEBAE /* AccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountModel.swift; sourceTree = "<group>"; };
 		5E62FF1D2C563747003FEBAE /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
 		5E62FF1F2C5637DD003FEBAE /* OperationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationModel.swift; sourceTree = "<group>"; };
+		5E62FF212C564074003FEBAE /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
 		5E9218432C5634E900143EED /* Easy Budget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Easy Budget.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E9218462C5634E900143EED /* Easy_BudgetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Easy_BudgetApp.swift; sourceTree = "<group>"; };
 		5E92184C2C5634EC00143EED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 		5E62FF1A2C563561003FEBAE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5E62FF212C564074003FEBAE /* HomeScreenView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -169,6 +172,7 @@
 			files = (
 				5E62FF1E2C563747003FEBAE /* CategoryModel.swift in Sources */,
 				5E62FF202C5637DD003FEBAE /* OperationModel.swift in Sources */,
+				5E62FF222C564074003FEBAE /* HomeScreenView.swift in Sources */,
 				5E62FF1C2C5635FC003FEBAE /* AccountModel.swift in Sources */,
 				5E9218472C5634E900143EED /* Easy_BudgetApp.swift in Sources */,
 			);

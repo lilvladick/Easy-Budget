@@ -10,23 +10,20 @@ import SwiftData
 
 @main
 struct Easy_BudgetApp: App {
-    var sharedModelContainer: ModelContainer = {
-        let schema = Schema([
-            Item.self,
-        ])
-        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
-
+    let container: ModelContainer
+    
+    init() {
         do {
-            return try ModelContainer(for: schema, configurations: [modelConfiguration])
+            container = try ModelContainer(for: Account.self, Operation.self, Category.self )
         } catch {
-            fatalError("Could not create ModelContainer: \(error)")
+            fatalError("Initialize error: \(error)")
         }
-    }()
+    }
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeScreenView()
         }
-        .modelContainer(sharedModelContainer)
+        .modelContainer(container)
     }
 }
