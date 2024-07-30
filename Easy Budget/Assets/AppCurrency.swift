@@ -12,10 +12,10 @@ struct Currency: Identifiable {
 }
 
 let Currencies: [Currency] = [
-    Currency(name: "US Dollar", symbol: "$"),
+    Currency(name: "Dollar", symbol: "$"),
     Currency(name: "Euro", symbol: "€"),
-    Currency(name: "British Pound", symbol: "£"),
-    Currency(name: "Japanese Yen", symbol: "¥"),
-    Currency(name: "Chinese Yuan", symbol: "¥"),
-    Currency(name: "Russian Ruble", symbol: "₽")
+    Currency(name: "Pound", symbol: "£"),
+    Currency(name: "Yen", symbol: "¥"),
+    Currency(name: "Yuan", symbol: "¥"),
+    Currency(name: "Ruble", symbol: "₽")
 ]

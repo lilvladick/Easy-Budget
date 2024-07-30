@@ -15,6 +15,8 @@
 		5E9218472C5634E900143EED /* Easy_BudgetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9218462C5634E900143EED /* Easy_BudgetApp.swift */; };
 		5E92184D2C5634EC00143EED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E92184C2C5634EC00143EED /* Assets.xcassets */; };
 		5E9218502C5634EC00143EED /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E92184F2C5634EC00143EED /* Preview Assets.xcassets */; };
+		5EBA58AE2C590A5700DBC393 /* AccountCartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBA58AD2C590A5700DBC393 /* AccountCartView.swift */; };
+		5EBA58B22C591DBF00DBC393 /* ColorsFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBA58B12C591DBF00DBC393 /* ColorsFormatter.swift */; };
 		5EE5B90D2C56D42200485E46 /* FirstLaunchSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE5B90C2C56D42200485E46 /* FirstLaunchSettingsView.swift */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +30,8 @@
 		5E9218462C5634E900143EED /* Easy_BudgetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Easy_BudgetApp.swift; sourceTree = "<group>"; };
 		5E92184C2C5634EC00143EED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5E92184F2C5634EC00143EED /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5EBA58AD2C590A5700DBC393 /* AccountCartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCartView.swift; sourceTree = "<group>"; };
+		5EBA58B12C591DBF00DBC393 /* ColorsFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsFormatter.swift; sourceTree = "<group>"; };
 		5EE5B90C2C56D42200485E46 /* FirstLaunchSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLaunchSettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -56,6 +60,7 @@
 			isa = PBXGroup;
 			children = (
 				5E3C303D2C58FA2300D5D5E9 /* AppCurrency.swift */,
+				5EBA58B12C591DBF00DBC393 /* ColorsFormatter.swift */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -65,6 +70,7 @@
 			children = (
 				5E62FF212C564074003FEBAE /* HomeScreenView.swift */,
 				5EE5B90C2C56D42200485E46 /* FirstLaunchSettingsView.swift */,
+				5EBA58AD2C590A5700DBC393 /* AccountCartView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -177,7 +183,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E62FF1E2C563747003FEBAE /* CategoryModel.swift in Sources */,
+				5EBA58B22C591DBF00DBC393 /* ColorsFormatter.swift in Sources */,
 				5E3C303E2C58FA2300D5D5E9 /* AppCurrency.swift in Sources */,
+				5EBA58AE2C590A5700DBC393 /* AccountCartView.swift in Sources */,
 				5EE5B90D2C56D42200485E46 /* FirstLaunchSettingsView.swift in Sources */,
 				5E62FF202C5637DD003FEBAE /* OperationModel.swift in Sources */,
 				5E62FF222C564074003FEBAE /* HomeScreenView.swift in Sources */,

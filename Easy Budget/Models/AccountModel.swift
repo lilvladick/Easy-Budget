@@ -1,4 +1,5 @@
 import Foundation
+import SwiftUI
 import SwiftData
 
 @Model
@@ -7,12 +8,10 @@ final class Account {
     var name: String
     var cash: Double
     var color: String
-    @Relationship(deleteRule: .cascade, inverse: \Operation.account) var operations: [Operation]
     
-    init(name: String, cash: Double, color: String, operations: [Operation]) {
+    init(name: String, cash: Double, color: String) {
         self.name = name
         self.cash = cash
         self.color = color
-        self.operations = operations
     }
 }

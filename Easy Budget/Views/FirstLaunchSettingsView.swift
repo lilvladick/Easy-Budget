@@ -144,7 +144,7 @@ struct CurrencySelectionView: View {
 
             Picker("Select Currency", selection: $currencySelection) {
                 ForEach(currencies) { currency in
-                    Text(currency.name).tag(currency.name)
+                    Text("\(currency.symbol)  \(currency.name)").tag(currency.symbol)
                 }
             }
             .pickerStyle(.menu)
