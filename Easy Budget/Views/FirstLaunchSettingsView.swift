@@ -4,16 +4,13 @@ enum SetupSteps: CaseIterable {
     case welcome
     case languageSelection
     case currencySelection
-    case themeSelection
     case finished
 }
 
 struct FirstLaunchSettingsView: View {
     @AppStorage("languageSelection") private var languageSelection: String = "English"
-    @AppStorage("currencySelection") private var currencySelection: String = "dollar"
-    @AppStorage("themeSelection") private var themeSelection: String = "light"
-
-    @State private var currentSetupStep = SetupSteps.languageSelection
+    @AppStorage("currencySelection") private var currencySelection: String = "US Dollar"
+    @State private var currentSetupStep = SetupSteps.welcome
 
     var body: some View {
         NavigationStack {
@@ -37,19 +34,10 @@ struct FirstLaunchSettingsView: View {
                 CurrencySelectionView(
                     onNext: {
                         withAnimation {
-                            currentSetupStep = .themeSelection
-                        }
-                    },
-                    currencySelection: $currencySelection
-                )
-            case .themeSelection:
-                ThemeSelectionView(
-                    onNext: {
-                        withAnimation {
                             currentSetupStep = .finished
                         }
                     },
-                    themeSelection: $themeSelection
+                    currencySelection: $currencySelection, currencies: Currencies
                 )
             case .finished:
                 HomeScreenView()
@@ -86,68 +74,94 @@ struct WelcomeView: View {
             onNext()
         }, label: {
             Text("Next").bold().font(.title3)
-        }).padding(10).background(.black).cornerRadius(10).foregroundColor(.white)
+        })
+        .padding(10)
+        .background(Color.black)
+        .cornerRadius(15)
+        .foregroundColor(Color.white)
     }
 }
 
 struct LanguageSelectionView: View {
     let onNext: () -> Void
     @Binding var languageSelection: String
-    
+
     var body: some View {
-        GeometryReader { geometry in
-            VStack {
-                Text("🌎").font(.system(size: geometry.size.width * 0.4))
-                Text("Let's choose language")
-                    .font(.title)
-                    .fontWeight(.bold)
-                    .padding()
+        VStack {
+            Image(systemName: "globe")
+                .font(.system(size: 80))
+                .padding()
 
-                Text("To make using the application as comfortable as possible, we suggest you choose the interface language.")
-                    .font(.body)
-                    .multilineTextAlignment(.center)
-                    .padding(.horizontal)
+            Text("Choose Language")
+                .font(.title)
+                .fontWeight(.bold)
+                .padding()
 
-                Picker("Select language", selection: $languageSelection) {
-                    Text("English").tag("English")
-                    Text("Русский").tag("Русский")
-                }.pickerStyle(.menu).tint(.black)
-            }.frame(maxWidth: .infinity, maxHeight: .infinity)
+            Text("Select your preferred language for the app interface.")
+                .font(.body)
+                .multilineTextAlignment(.center)
+                .padding(.horizontal)
+
+            Picker("Language", selection: $languageSelection) {
+                Text("English").tag("English")
+                Text("Русский").tag("Русский")
+            }
+            .pickerStyle(.menu)
+            .tint(.black)
+            .padding()
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
         
-        Button(action: {
+        Button("Next") {
             onNext()
-        }, label: {
-            Text("Next").bold().font(.title3)
-        }).padding(10).background(.black).cornerRadius(10).foregroundColor(.white)
+        }
+        .padding(10)
+        .background(Color.black)
+        .foregroundColor(Color.white)
+        .cornerRadius(15)
     }
 }
-
 struct CurrencySelectionView: View {
     let onNext: () -> Void
     @Binding var currencySelection: String
+    let currencies: [Currency]
+    
     var body: some View {
-        Text("cur")
-        
-        Button(action: {
-            onNext()
-        }, label: {
-            Text("Next").bold().font(.title3)
-        }).padding(10).background(.black).cornerRadius(10).foregroundColor(.white)
-    }
-}
+        VStack {
+            Image(systemName: "banknote")
+                .font(.system(size: 80))
+                .padding()
 
-struct ThemeSelectionView: View {
-    let onNext: () -> Void
-    @Binding var themeSelection: String
-    var body: some View {
-        Text("theme")
+            Text("Choose Currency")
+                .font(.title)
+                .fontWeight(.bold)
+                .padding()
+
+            Text("Select your preferred currency for the app.")
+                .font(.body)
+                .multilineTextAlignment(.center)
+                .padding(.horizontal)
+
+            Picker("Select Currency", selection: $currencySelection) {
+                ForEach(currencies) { currency in
+                    Text(currency.name).tag(currency.name)
+                }
+            }
+            .pickerStyle(.menu)
+            .tint(.black)
+            .padding()
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
         
         Button(action: {
             onNext()
         }, label: {
             Text("Next").bold().font(.title3)
-        }).padding(10).background(.black).cornerRadius(10).foregroundColor(.white)
+        })
+        .padding(10)
+        .background(Color.black)
+        .cornerRadius(15)
+        .foregroundColor(Color.white)
     }
 }
 
