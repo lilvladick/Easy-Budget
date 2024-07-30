@@ -9,7 +9,7 @@ enum SetupSteps: CaseIterable {
 
 struct FirstLaunchSettingsView: View {
     @AppStorage("languageSelection") private var languageSelection: String = "English"
-    @AppStorage("currencySelection") private var currencySelection: String = "US Dollar"
+    @AppStorage("currencySelection") private var currencySelection: String = "Dollar"
     @State private var currentSetupStep = SetupSteps.welcome
 
     var body: some View {

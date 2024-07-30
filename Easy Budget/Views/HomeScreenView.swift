@@ -10,28 +10,35 @@ struct HomeScreenView: View {
 
     var body: some View {
         VStack(alignment: .leading) {
-            Text(selectedAccount?.name ?? "")
-                .font(.largeTitle)
-                .bold()
-                .padding()
-
-            GeometryReader { geometry in
-                ScrollView(.horizontal) {
-                    LazyHStack(spacing: 15) {
-                        ForEach(accounts) { account in
-                            AccountCartView(account: account)
-                                .onTapGesture {
-                                    selectedAccount = account
-                                }
-                                .scaleEffect(account == selectedAccount ? 1.05 : 1)
-                        }
-                    }.padding(.horizontal)
-                }
-                .scrollTargetBehavior(.viewAligned)
-                .scrollIndicators(.hidden)
-                .scrollTargetLayout()
+            HStack {
+                Text(selectedAccount?.name ?? "Create your first account")
+                    .font(.largeTitle)
+                    .bold()
+                Spacer()
+                Button(action: {
+                    
+                }, label: {
+                    Image(systemName: "gearshape")
+                        .font(.system(size: 25))
+                })
             }
+            .padding()
 
+            ScrollView(.horizontal) {
+                LazyHStack(spacing: 15) {
+                    ForEach(accounts) { account in
+                        AccountCartView(account: account)
+                            .containerRelativeFrame(.horizontal)
+                            .onTapGesture {
+                                selectedAccount = account
+                            }
+                            .scaleEffect(account == selectedAccount ? 1.05 : 1)
+                    }
+                }
+            }
+            .scrollTargetBehavior(.viewAligned)
+            .scrollIndicators(.hidden)
+            .scrollTargetLayout()
         }
         .frame(maxHeight: .infinity)
         .onAppear {
