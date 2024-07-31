@@ -76,7 +76,7 @@ struct WelcomeView: View {
             Text("Next").bold().font(.title3)
         })
         .padding(10)
-        .background(Color.black)
+        .background(Color.accentColor)
         .cornerRadius(15)
         .foregroundColor(Color.white)
     }
@@ -107,7 +107,7 @@ struct LanguageSelectionView: View {
                 Text("Русский").tag("Русский")
             }
             .pickerStyle(.menu)
-            .tint(.black)
+            .tint(Color.accentColor)
             .padding()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -116,7 +116,7 @@ struct LanguageSelectionView: View {
             onNext()
         }
         .padding(10)
-        .background(Color.black)
+        .background(Color.accentColor)
         .foregroundColor(Color.white)
         .cornerRadius(15)
     }
@@ -148,7 +148,7 @@ struct CurrencySelectionView: View {
                 }
             }
             .pickerStyle(.menu)
-            .tint(.black)
+            .tint(Color.accentColor)
             .padding()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -159,7 +159,7 @@ struct CurrencySelectionView: View {
             Text("Next").bold().font(.title3)
         })
         .padding(10)
-        .background(Color.black)
+        .background(Color.accentColor)
         .cornerRadius(15)
         .foregroundColor(Color.white)
     }
