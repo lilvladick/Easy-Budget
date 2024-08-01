@@ -11,6 +11,7 @@ struct FirstLaunchSettingsView: View {
     @AppStorage("languageSelection") private var languageSelection: String = "English"
     @AppStorage("currencySelection") private var currencySelection: String = "Dollar"
     @State private var currentSetupStep = SetupSteps.welcome
+    private var notificationsManager = NotificationManager()
 
     var body: some View {
         NavigationStack {
@@ -42,6 +43,8 @@ struct FirstLaunchSettingsView: View {
             case .finished:
                 HomeScreenView()
             }
+        }.onAppear {
+            notificationsManager.reqestNotifications()
         }
     }
 }

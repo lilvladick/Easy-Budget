@@ -7,13 +7,17 @@ final class Operation {
     var name: String
     var operationDescription: String?
     var categoryId: UUID?
+    var repeatEveryMonth: Bool
+    var dateCreated: Date
     @Relationship(deleteRule: .nullify) var category: Category?
     @Relationship var account: Account
     
-    init(name: String, operationDescription: String? = nil, categoryId: UUID? = nil, category: Category? = nil, account: Account) {
+    init(name: String, operationDescription: String? = nil, categoryId: UUID? = nil, repeatEveryMonth: Bool, dateCreated: Date = Date(), category: Category? = nil, account: Account) {
         self.name = name
         self.operationDescription = operationDescription
         self.categoryId = categoryId
+        self.repeatEveryMonth = repeatEveryMonth
+        self.dateCreated = dateCreated
         self.category = category
         self.account = account
     }

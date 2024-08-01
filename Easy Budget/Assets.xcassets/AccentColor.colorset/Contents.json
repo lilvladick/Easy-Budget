@@ -2,34 +2,8 @@
   "colors" : [
     {
       "color" : {
-        "platform" : "universal",
-        "reference" : "systemCyanColor"
-      },
-      "idiom" : "universal"
-    },
-    {
-      "appearances" : [
-        {
-          "appearance" : "luminosity",
-          "value" : "light"
-        }
-      ],
-      "color" : {
-        "platform" : "universal",
-        "reference" : "systemCyanColor"
-      },
-      "idiom" : "universal"
-    },
-    {
-      "appearances" : [
-        {
-          "appearance" : "luminosity",
-          "value" : "dark"
-        }
-      ],
-      "color" : {
-        "platform" : "osx",
-        "reference" : "controlAccentColor"
+        "platform" : "ios",
+        "reference" : "systemBlueColor"
       },
       "idiom" : "universal"
     }

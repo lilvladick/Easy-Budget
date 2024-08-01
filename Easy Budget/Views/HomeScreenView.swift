@@ -10,6 +10,7 @@ struct HomeScreenView: View {
     @Query private var accounts: [Account]
     @State private var selectedAccount: Account?
     @State private var showMenu = false
+    @State private var showingNewAccount = false
 
     var body: some View {
         NavigationStack {
@@ -43,7 +44,7 @@ struct HomeScreenView: View {
                 }
                 
                 if showMenu {
-                    MenuView(showMenu: $showMenu)
+                    MenuView(showMenu: $showMenu, showingNewAccount: $showingNewAccount)
                         .padding()
                         .transition(.move(edge: .bottom).combined(with: .opacity))
                 }
@@ -52,6 +53,9 @@ struct HomeScreenView: View {
             alignment: .bottomTrailing
         )
         .preferredColorScheme(isDarkmodeOn ? .dark : .light)
+        .sheet(isPresented: $showingNewAccount) {
+            CreateNewAccount()
+        }
     }
 }
 
@@ -101,13 +105,21 @@ struct AccountScrollView: View {
 
 struct MenuView: View {
     @Binding var showMenu: Bool
+    @Binding var showingNewAccount: Bool
     @AppStorage("isDarkModeOn") private var isDarkmodeOn = false
     
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
-            MenuButton(title: "New transaction", showMenu: $showMenu)
-            MenuButton(title: "New category", showMenu: $showMenu)
-            MenuButton(title: "New account", showMenu: $showMenu)
+            MenuButton(title: "New transaction", showMenu: $showMenu, action: {
+                
+            })
+            MenuButton(title: "New category", showMenu: $showMenu, action: {
+                
+            })
+            MenuButton(title: "New account", showMenu: $showMenu, action: {
+                showingNewAccount = true
+            })
+            
         }
         .background(isDarkmodeOn ? Color.menuColors : Color.white)
         .foregroundColor(isDarkmodeOn ? Color.white : Color.black)
@@ -119,9 +131,11 @@ struct MenuView: View {
 struct MenuButton: View {
     let title: String
     @Binding var showMenu: Bool
+    let action: (() -> Void)?
     
     var body: some View {
         Button(action: {
+            action?()
             showMenu = false
         }) {
             Text(title)

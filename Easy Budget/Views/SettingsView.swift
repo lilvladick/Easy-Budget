@@ -1,7 +1,15 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @State private var sendNotify = true
+    var notificationsManager = NotificationManager()
+    
+    @State private var sentNotify = true {
+        didSet {
+            if sentNotify == false {
+                notificationsManager.disableNotifications()
+            }
+        }
+    }
     @State private var choosedLang = ""
     @State private var iCloudSynIsEnable = false
     @AppStorage("isDarkModeOn") private var isDarkmodeOn = false
@@ -26,7 +34,7 @@ struct SettingsView: View {
                 }
                 Section("Network") {
                     Toggle("iCloud synchronization", isOn: $iCloudSynIsEnable)
-                    Toggle("Notifications", isOn: $sendNotify)
+                    Toggle("Notifications", isOn: $sentNotify)
                 }
                 Section("Design") {
                     Toggle("Dark theme", isOn: $isDarkmodeOn)
