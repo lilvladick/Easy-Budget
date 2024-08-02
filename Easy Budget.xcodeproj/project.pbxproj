@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5E0707BF2C5975D7008BA188 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0707BE2C5975D7008BA188 /* SettingsView.swift */; };
+		5E3299BD2C5CDD4D0053BF2E /* CreateNewCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3299BC2C5CDD4D0053BF2E /* CreateNewCategoryView.swift */; };
 		5E3C303E2C58FA2300D5D5E9 /* AppCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3C303D2C58FA2300D5D5E9 /* AppCurrency.swift */; };
 		5E58B0F92C5BA96C00BFA498 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E58B0F82C5BA96C00BFA498 /* NotificationManager.swift */; };
 		5E58B0FB2C5BB74900BFA498 /* CreateNewAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E58B0FA2C5BB74900BFA498 /* CreateNewAccount.swift */; };
@@ -25,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		5E0707BE2C5975D7008BA188 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		5E3299BC2C5CDD4D0053BF2E /* CreateNewCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewCategoryView.swift; sourceTree = "<group>"; };
 		5E3C303D2C58FA2300D5D5E9 /* AppCurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCurrency.swift; sourceTree = "<group>"; };
 		5E58B0F82C5BA96C00BFA498 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		5E58B0FA2C5BB74900BFA498 /* CreateNewAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewAccount.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 				5EBA58AD2C590A5700DBC393 /* AccountCartView.swift */,
 				5E0707BE2C5975D7008BA188 /* SettingsView.swift */,
 				5E58B0FA2C5BB74900BFA498 /* CreateNewAccount.swift */,
+				5E3299BC2C5CDD4D0053BF2E /* CreateNewCategoryView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E58B0FB2C5BB74900BFA498 /* CreateNewAccount.swift in Sources */,
+				5E3299BD2C5CDD4D0053BF2E /* CreateNewCategoryView.swift in Sources */,
 				5E62FF1E2C563747003FEBAE /* CategoryModel.swift in Sources */,
 				5EBA58B22C591DBF00DBC393 /* ColorsFormatter.swift in Sources */,
 				5E3C303E2C58FA2300D5D5E9 /* AppCurrency.swift in Sources */,

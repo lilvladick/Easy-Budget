@@ -5,7 +5,6 @@ struct CreateNewAccount: View {
     @Environment(\.modelContext) private var modelContext: ModelContext
     @Environment(\.dismiss) private var dismiss
     @AppStorage("isDarkModeOn") private var isDarkmodeOn = false
-    private var notificationsManager = NotificationManager()
     @State private var accountName = ""
     @State private var accountCash = 0.0
     @State private var accountColor = "#000000"
@@ -27,13 +26,12 @@ struct CreateNewAccount: View {
                         }
                 }
             }
-            .navigationTitle("Create new account")
+            .navigationTitle("New account")
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("Save") {
-                        dismiss()
                         saveAccount()
-                    }
+                    }.disabled(accountName.isEmpty)
                 }
             }
         }.preferredColorScheme(isDarkmodeOn ? .dark : .light)

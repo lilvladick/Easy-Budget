@@ -7,13 +7,11 @@ final class Category {
     var name: String
     var color: String
     var icon: String
-    @Relationship(inverse: \Operation.category) var operations: [Operation]
     
     
-    init(name: String, color: String, icon: String, operations: [Operation]) {
+    init(name: String, color: String, icon: String) {
         self.name = name
         self.color = color
         self.icon = icon
-        self.operations = operations
     }
 }
