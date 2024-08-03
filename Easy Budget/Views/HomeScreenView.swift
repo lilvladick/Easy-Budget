@@ -17,6 +17,11 @@ struct HomeScreenView: View {
             VStack(alignment: .leading) {
                 HeaderView(selectedAccount: $selectedAccount)
                 AccountScrollView(accounts: accounts, selectedAccount: $selectedAccount)
+                    .frame(maxWidth: .infinity, maxHeight: 150)
+                TransactionListView()
+                    .frame(maxHeight: .infinity)
+                    .ignoresSafeArea(edges: [.bottom, .top])
+                Spacer()
             }
             .onAppear {
                 if let firstAccount = accounts.first {

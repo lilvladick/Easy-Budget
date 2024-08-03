@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5E0707BF2C5975D7008BA188 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0707BE2C5975D7008BA188 /* SettingsView.swift */; };
 		5E18A6282C5E71A000C7F635 /* TransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E18A6272C5E71A000C7F635 /* TransactionView.swift */; };
+		5E18A62A2C5E7C8E00C7F635 /* TransactionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E18A6292C5E7C8E00C7F635 /* TransactionListView.swift */; };
 		5E3299BD2C5CDD4D0053BF2E /* CreateNewCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3299BC2C5CDD4D0053BF2E /* CreateNewCategoryView.swift */; };
 		5E3C303E2C58FA2300D5D5E9 /* AppCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3C303D2C58FA2300D5D5E9 /* AppCurrency.swift */; };
 		5E58B0F92C5BA96C00BFA498 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E58B0F82C5BA96C00BFA498 /* NotificationManager.swift */; };
@@ -30,6 +31,7 @@
 /* Begin PBXFileReference section */
 		5E0707BE2C5975D7008BA188 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		5E18A6272C5E71A000C7F635 /* TransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionView.swift; sourceTree = "<group>"; };
+		5E18A6292C5E7C8E00C7F635 /* TransactionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListView.swift; sourceTree = "<group>"; };
 		5E3299BC2C5CDD4D0053BF2E /* CreateNewCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewCategoryView.swift; sourceTree = "<group>"; };
 		5E3C303D2C58FA2300D5D5E9 /* AppCurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCurrency.swift; sourceTree = "<group>"; };
 		5E58B0F82C5BA96C00BFA498 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 				5EBA58AD2C590A5700DBC393 /* AccountCartView.swift */,
 				5E0707BE2C5975D7008BA188 /* SettingsView.swift */,
 				5E18A6272C5E71A000C7F635 /* TransactionView.swift */,
+				5E18A6292C5E7C8E00C7F635 /* TransactionListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -221,6 +224,7 @@
 				5E58B0F92C5BA96C00BFA498 /* NotificationManager.swift in Sources */,
 				5EE5B90D2C56D42200485E46 /* FirstLaunchSettingsView.swift in Sources */,
 				5E0707BF2C5975D7008BA188 /* SettingsView.swift in Sources */,
+				5E18A62A2C5E7C8E00C7F635 /* TransactionListView.swift in Sources */,
 				5E62FF202C5637DD003FEBAE /* OperationModel.swift in Sources */,
 				5E62FF222C564074003FEBAE /* HomeScreenView.swift in Sources */,
 				5E62FF1C2C5635FC003FEBAE /* AccountModel.swift in Sources */,

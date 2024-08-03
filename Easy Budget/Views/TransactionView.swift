@@ -11,7 +11,7 @@ struct TransactionView: View {
         HStack {
             Text("💸").font(.title)
             VStack(alignment: .leading){
-                Text(operation.name).font(.title2).bold()
+                Text(operation.name).font(.title3).bold()
                 Text(operation.operationDescription ?? "").font(.callout).foregroundStyle(Color.gray)
             }
             /* preview doesn't work =(
@@ -23,6 +23,7 @@ struct TransactionView: View {
             Spacer()
             Text(String(format: "%.2f", operation.operationSum) + " \(currencySelection)").font(.title3).bold()
         }
+        .background(Color.white)
     }
 }
 
