@@ -75,10 +75,9 @@ struct CreateNewOperationView: View {
             name: operationName,
             operationSum: operationSum,
             operationDescription: operationDescription,
-            categoryId: selectedCategory.id,
+            category: selectedCategory,
             repeatEveryMonth: repeatOperation,
             dateCreated: Date(),
-            category: selectedCategory,
             account: selectedAccount
         )
         
