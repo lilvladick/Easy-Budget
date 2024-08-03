@@ -15,3 +15,21 @@ final class Category {
         self.icon = icon
     }
 }
+
+func addDefaultCategories(to context: ModelContext) {
+    let defaultCategories = [
+        Category(name: "Food", color: "#FF6F61", icon: "🍎"),
+        Category(name: "Transport", color: "#4CAF50", icon: "🚗"),
+        Category(name: "Clothing", color: "#9C27B0", icon: "👗")
+    ]
+    
+    for category in defaultCategories {
+        context.insert(category)
+    }
+    
+    do {
+        try context.save()
+    } catch {
+        print("Failed to save default categories: \(error)")
+    }
+}

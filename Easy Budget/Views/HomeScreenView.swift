@@ -10,7 +10,7 @@ struct HomeScreenView: View {
     @Query private var accounts: [Account]
     @State private var selectedAccount: Account?
     @State private var showMenu = false
-    @State private var showingNewAccount = false
+    @State private var sheetType: SheetType? = nil
 
     var body: some View {
         NavigationStack {
@@ -44,7 +44,7 @@ struct HomeScreenView: View {
                 }
                 
                 if showMenu {
-                    MenuView(showMenu: $showMenu, showingNewAccount: $showingNewAccount)
+                    MenuView(showMenu: $showMenu, sheetType: $sheetType)
                         .padding()
                         .transition(.move(edge: .bottom).combined(with: .opacity))
                 }
@@ -53,8 +53,8 @@ struct HomeScreenView: View {
             alignment: .bottomTrailing
         )
         .preferredColorScheme(isDarkmodeOn ? .dark : .light)
-        .sheet(isPresented: $showingNewAccount) {
-            CreateNewAccount()
+        .sheet(item: $sheetType) { sheetType in
+            sheetType.content
         }
     }
 }
@@ -105,21 +105,20 @@ struct AccountScrollView: View {
 
 struct MenuView: View {
     @Binding var showMenu: Bool
-    @Binding var showingNewAccount: Bool
+    @Binding var sheetType: SheetType?
     @AppStorage("isDarkModeOn") private var isDarkmodeOn = false
     
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
             MenuButton(title: "New transaction", showMenu: $showMenu, action: {
-                
+                sheetType = .newTransaction
             })
             MenuButton(title: "New category", showMenu: $showMenu, action: {
-                
+                sheetType = .newCategory
             })
             MenuButton(title: "New account", showMenu: $showMenu, action: {
-                showingNewAccount = true
+                sheetType = .newAccount
             })
-            
         }
         .background(isDarkmodeOn ? Color.menuColors : Color.white)
         .foregroundColor(isDarkmodeOn ? Color.white : Color.black)
@@ -127,6 +126,7 @@ struct MenuView: View {
         .shadow(radius: 10)
     }
 }
+
 
 struct MenuButton: View {
     let title: String

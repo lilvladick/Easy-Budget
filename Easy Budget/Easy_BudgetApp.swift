@@ -22,12 +22,26 @@ struct Easy_BudgetApp: App {
                 FirstLaunchSettingsView()
                     .modelContainer(container)
                     .onAppear {
+                        Task {
+                            await addDefaultCategoriesIfNeeded()
+                        }
+                        
                         defaults.set(true, forKey: isFirstLaunch)
                     }
             } else {
                 HomeScreenView()
                     .modelContainer(container)
             }
+        }
+    }
+    
+    @MainActor
+    private func addDefaultCategoriesIfNeeded() async {
+        let context = container.mainContext
+
+        await withCheckedContinuation { continuation in
+            addDefaultCategories(to: context)
+            continuation.resume()
         }
     }
 }
