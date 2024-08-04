@@ -15,8 +15,8 @@ struct HomeScreenView: View {
         NavigationStack {
             VStack(alignment: .leading) {
                 HeaderView(selectedAccount: $selectedAccount)
-                AccountScrollView(accounts: accounts, selectedAccount: $selectedAccount)
-                    .frame(maxWidth: .infinity, maxHeight: 150)
+                AccountScrollView(selectedAccount: $selectedAccount)
+                    .frame(maxWidth: .infinity, maxHeight: 160)
                 TransactionListView()
                     .frame(maxHeight: .infinity)
                     .ignoresSafeArea(edges: [.bottom, .top])
@@ -85,7 +85,7 @@ struct HeaderView: View {
 
 struct AccountScrollView: View {
     @Environment(\.modelContext) var modelContext: ModelContext
-    @State var accounts: [Account]
+    @Query private var accounts: [Account]
     @Binding var selectedAccount: Account?
     
     var body: some View {
@@ -109,7 +109,6 @@ struct AccountScrollView: View {
     
     private func deleteAccount(account: Account) {
         if let index = accounts.firstIndex(where: { $0.id == account.id }) {
-           accounts.remove(at: index)
            modelContext.delete(account)
            do {
                try modelContext.save()

@@ -44,7 +44,6 @@ struct CreateNewAccount: View {
             cash: accountCash,
             color: accountColor
         )
-        
         modelContext.insert(newAccount)
         
         do {
