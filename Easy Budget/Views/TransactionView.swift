@@ -23,7 +23,8 @@ struct TransactionView: View {
             Spacer()
             Text(String(format: "%.2f", operation.operationSum) + " \(currencySelection)").font(.title3).bold()
         }
-        .background(Color.white)
+        .background(isDarkmodeOn ? Color.black : Color.white)
+        .preferredColorScheme(isDarkmodeOn ? .dark : .light)
     }
 }
 

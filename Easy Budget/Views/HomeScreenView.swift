@@ -3,7 +3,6 @@ import SwiftData
 
 struct HomeScreenView: View {
     @Environment(\.modelContext) private var modelContext: ModelContext
-    
     @AppStorage("isDarkModeOn") private var isDarkmodeOn = false
     @AppStorage("currencySelection") private var currencySelection: String = "US Dollar"
     
@@ -77,7 +76,7 @@ struct HeaderView: View {
                 SettingsView(currencies: Currencies)
             } label: {
                 Image(systemName: "gearshape.fill")
-                    .font(.system(size: 25))
+                    .font(.system(size: 20))
             }
         }
         .padding()
@@ -85,14 +84,15 @@ struct HeaderView: View {
 }
 
 struct AccountScrollView: View {
-    let accounts: [Account]
+    @Environment(\.modelContext) var modelContext: ModelContext
+    @State var accounts: [Account]
     @Binding var selectedAccount: Account?
     
     var body: some View {
         ScrollView(.horizontal) {
             LazyHStack(spacing: 15) {
                 ForEach(accounts) { account in
-                    AccountCartView(account: account)
+                    AccountCartView(account: account, onDelete: deleteAccount)
                         .contentShape(Rectangle())
                         .containerRelativeFrame(.horizontal)
                         .onTapGesture {
@@ -105,6 +105,18 @@ struct AccountScrollView: View {
         .scrollTargetBehavior(.viewAligned)
         .scrollIndicators(.hidden)
         .scrollTargetLayout()
+    }
+    
+    private func deleteAccount(account: Account) {
+        if let index = accounts.firstIndex(where: { $0.id == account.id }) {
+           accounts.remove(at: index)
+           modelContext.delete(account)
+           do {
+               try modelContext.save()
+           } catch {
+               print("Failed to delete account: \(error.localizedDescription)")
+           }
+       }
     }
 }
 

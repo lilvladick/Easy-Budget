@@ -12,7 +12,9 @@ struct CreateNewAccount: View {
     
     var body: some View {
         NavigationStack {
-            AccountCartView(account: Account(name: accountName, cash: accountCash, color: accountColor))
+            AccountCartView(account: Account(name: accountName, cash: accountCash, color: accountColor), onDelete: {_ in 
+                //empty func
+            })
             
             Form {
                 Section("Account information") {

@@ -9,11 +9,40 @@ struct TransactionListView: View {
         List {
             ForEach(operations, id: \.id) { operation in
                 TransactionView(operation: operation)
+                    .swipeActions {
+                        Button(role: .destructive) {
+                            deleteTransaction(at: IndexSet(integer: operations.firstIndex(of: operation)!))
+                       } label: {
+                           Label("Delete", systemImage: "trash")
+                       }
+                       .tint(Color.red)
+                        
+                        Button {
+                            
+                       } label: {
+                           Label("Edit", systemImage: "pencil")
+                       }
+                    }
             }
         }
         .listStyle(PlainListStyle())
-        .background(Color.white)
+        .background(isDarkmodeOn ? Color.black : Color.white)
+        .preferredColorScheme(isDarkmodeOn ? .dark : .light)
         .ignoresSafeArea(edges: [.bottom, .top])
+    }
+    
+    func deleteTransaction(at offset: IndexSet) {
+        for index in offset {
+            let operation = operations[index]
+            modelContext.delete(operation)
+        }
+        
+        do {
+            try modelContext.save()
+        } catch {
+            let nsError = error as NSError
+            print("Error deleting task: \(nsError), \(nsError.userInfo)")
+        }
     }
 }
 
